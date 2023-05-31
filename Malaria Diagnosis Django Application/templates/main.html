@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Malaria Prediction Application</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    
+    </head>
+    
+    <body style="background-color:grey;">
+        <center>
+       <h1>Malaria Prediction Application</h1>
+        </center>
+       <hr>
+       
+       <center>
+
+       {% if result %}
+       <br><br>
+            <h1>Current diagnosis: {{result}}</h1>
+       {% else %}
+       </center>
+            <form action="" method="POST">
+                    {% csrf_token %}
+                    Temperature: <input type="text" name="temperature" min="34" max="41" required><br><br>
+                    Parasite Density: <input type="text" name="parasite_density" min="" max="" required><br><br>
+                    WBC Count: <input type="text" name="wbc_count" required><br><br>
+                    HB Level: <input type="text" name="hb_level" min="0" max="20" required><br><br>
+
+                    Hematocrit: <input type="text" name="hematocrit" required><br><br>
+                    Mean Cell Volume: <input type="text" name="mean_cell_volume" required><br><br>
+                    Mean Corp HB: <input type="text" name="mean_corp_hb" required><br><br>
+                    Mean Cell HB_conc: <input type="text" name="mean_cell_hb_conc" required><br><br>
+                
+                    Platelet Count: <input type="text" name="platelet_count" required><br><br>
+                    Platelet Distr Width: <input type="text" name="platelet_distr_width" required><br><br>
+                    Mean Platelet Vl: <input type="text" name="mean_platelet_vl" required><br><br>
+                    Neutrophils Percent: <input type="text" name="neutrophils_percent" required><br><br>
+                
+                    Lymphocytes Percent: <input type="text" name="lymphocytes_percent" required><br><br>
+                    Mixed Cells Percent: <input type="text" name="mixed_cells_percent" required><br><br>
+                    Neutrophils Count: <input type="text" name="neutrophils_count" required><br><br>
+                    Lymphocytes Count: <input type="text" name="lymphocytes_count" required><br><br>
+                    Mixed Cells Count: <input type="text" name="mixed_cells_count" required><br><br>
+                    <input type="submit">
+                
+            </form>
+        {% endif %}
+    </body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grade Application</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Grade Django Application</h1>
+        <hr>
+        {% if result %}
+            <h1>Your current grade is {{ result }}</h1>
+        {% else %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                Quizzes: <input type="number" name="quiz" required><br>
+                Assignments: <input type="number" name="assignment" required><br>
+                Midterm Exam: <input type="number" name="midterm" required><br>
+                Final Exam: <input type="number" name="final" required><br>
+                <input type="submit">
+            </form>
+        {% endif %}
+    </body>
+</html> {% endcomment %}
